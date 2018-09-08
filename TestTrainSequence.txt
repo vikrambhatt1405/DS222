@@ -1,9 +1,0 @@
-python3 generateCtrUpdates.py DBPedia.full/full_train.txt  | LC_ALL=C sort | python3 processCtrUpdates.py | python ReorganizeHashTable1.py |LC_ALl=C sort | python ReorganizeHashTable2.py > ReorganizedHashTable.csv
-python3 generateCtrUpdates.py | LC_ALL=C sort | python3 processCtrUpdates.py  | grep -v "Y=.* and W=.*" > ClassLabelsCount.csv
-python3 generateCtrUpdates.py DBPedia.full/full_train.txt| LC_ALL=C sort | python3 processCtrUpdates.py  | grep  "Y=.* and W=ANY" > ClassLabelsCountForANY.csv
-python3 generateCtrUpdates.py DBPedia.full/full_train.txt | LC_ALL=C sort | python3 processCtrUpdates.py  | grep -v "Y=.* and W=.*" > ClassLabelsCount.csv
-python3 generateTestMessages.py DBPedia.full/full_test.txt > TestMessages.csv
-cat TestMessages.csv ReorganizedHashTable.csv |LC_ALL=C sort -S 1G | cut --complement -f 2 -d , > MergedFile.csv
-python3 generateIndexWordCtrs.py MergedFile.csv | grep -v "^\[" |LC_ALL=C sort -n>indexWordCounters.csv
-python generateTestLabels.py DBPedia.full/full_test.txt > TestLabels.csv
-python3 generateProbs.py 263289 ClassLabelsCount.csv ClassLabelsCountForANY.csv indexWordCounters.csv > PredictedClasses.csv
