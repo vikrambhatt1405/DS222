@@ -1,5 +1,6 @@
 # DS222
 Assignments and Projects
 
-Hadoop jars are located in HadoopNaiveBayes/src/
-Naive Bayes implemented in local machine using pyhton scripts with stream and sort methods.
+Hadoop jars are located in HadoopNaiveBayes/src folder.
+
+Naive Bayes implemented on local machine using pyhton scripts with stream and sort methods.
